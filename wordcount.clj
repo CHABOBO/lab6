@@ -24,8 +24,9 @@
           options
           {"sentences-spout" :shuffle}
           "bolts.tweetcounter.TweetCounter"
-          ["word"]
+          ["word" "counts"]
           :p 2
           )
     }
   ]
+)
