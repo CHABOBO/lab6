@@ -3,11 +3,10 @@
 #Modify the code in wordcount.py so that it updates the table. 
 #You can find sample code on how to use the psycopg library to interact with Postgres in psycopg-sample.py.file.
 
+from __future__ import absolute_import, print_function, unicode_literals
 
 import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-
-from __future__ import absolute_import, print_function, unicode_literals
+#from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
 
 from collections import Counter
 from streamparse.bolt import Bolt
