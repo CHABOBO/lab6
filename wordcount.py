@@ -21,7 +21,7 @@ class WordCounter(Bolt):
     def process(self, tup):
         word = tup.values[0]
 
-        cur = conn.cursor()
+        
 
         # Write codes to increment the word count in Postgres
         # Use psycopg to interact with Postgres
@@ -39,7 +39,7 @@ class WordCounter(Bolt):
         self.log('%s: %d' % (word, self.counts[word]))
 
         conn = psycopg2.connect(database="tcount", user="postgres", password="pass", host="localhost", port="5432")
-
+        cur = conn.cursor()
         uCount= self.counts[word]
         uWord= word
         cur.execute("UPDATE tweetwordcount SET count=%s WHERE word=%s", (uCount, uWord))
